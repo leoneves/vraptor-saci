@@ -37,7 +37,7 @@
 	      <artifactId>maven-deploy-plugin</artifactId>
 	        <version>2.7</version>
     		<configuration>
-        	  <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/site</altDeploymentRepository>
+        	  <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
 		</configuration>
 		</plugin>
                   <plugin>
@@ -47,9 +47,9 @@
             	      <configuration>
                         <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                 	<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                	<outputDirectory>${built.repo.dir}</outputDirectory> <!-- matches distribution management repository url above -->
+                	<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
                 	<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
-                	<includes>
+			<includes>
 				<include>**/*</include>
 			</includes>
        			<repositoryName>vraptor-saci</repositoryName>      <!-- github repo name -->
@@ -71,7 +71,7 @@
 		<repository>
         		<id>github</id>
         		<name>GitHub ${project.artifactId} Repository</name>
-        		<url>https://github.com/leoneves/${project.artifactId}/mvn-repo</url>
+        		<url>https://raw.github.com/leoneves/${project.artifactId}/mvn-repo</url>
     		</repository>
 	</distributionManagement>
 
