@@ -14,7 +14,7 @@ Caso esteja utilizando o Maven, adicione o repositório e a dependência no arqu
 	<repositories>
 		<repository>
 			<id>saci</id>
-			<url>https://github.com/leoneves/vraptor-saci/tree/mvn-repo/mvn-repo</url>
+			<url>https://raw.github.com/leoneves/vraptor-saci/mvn-repo/</url>
 				<snapshots>
 					<enabled>true</enabled>
 					<updatePolicy>always</updatePolicy>
